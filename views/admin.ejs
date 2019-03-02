@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include partials/head %>
+    <script src="/javascripts/admin.js"></script>
+</head>
+
+<body>
+  <header>
+    <% include partials/header %>
+      <% include partials/breadcrumb %>
+  </header>
+  <main id="main">
+    <img class="introImageBoard" src="/images/background2.jpg" />
+    <div class="ui container">
+      <div class="ui tabular menu">
+        <div class="active item" data-tab="memberAdd">회원 추가</div>
+        <div class="item" data-tab="memberManage">회원 관리</div>
+      </div>
+      <div class="ui tab" data-tab="memberAdd">
+
+      </div>
+      <div class="ui tab" data-tab="memberManage">
+        <script>var users = []; var index;</script>
+        <% for(var i=0; i<users.length; i++){ %>
+        <script>          
+          users[<%=i%>] = {
+            name : '<%= users[i].dataValues.name %>'
+          };
+        </script>
+        <a class="ui image label" style="margin : 5px;" data-index="<%=i%>">
+          <img src="/images/avatar/profile.jpg" style="pointer-events: none">
+          <%= users[i].dataValues.name;%>
+        </a>
+        <% } %>
+        <div class="ui divider"></div>
+        <form class="ui form">
+          <div class="field">
+            <label>이름</label>
+            <input type="text" name="name" placeholder="이름" id="form_name">
+          </div>
+          <div class="field">
+            <label>비밀번호</label>
+            <input type="text" name="password" placeholder="비밀번호" id="form_password">
+          </div>
+          <div class="field">
+            <label>전화번호</label>
+            <input type="text" name="phone" placeholder="전화번호" id="form_phone">
+          </div>
+          <div class="field">
+            <label>입학년도</label>
+            <input type="text" name="year" placeholder="입학년도" id="form_year">
+          </div>
+          <div class="field">
+            <label>학과</label>
+            <input type="text" name="major" placeholder="학과" id="form_major">
+          </div>
+          
+          <div class="field">
+            <% for(var i=0; i<authorities.length; i++){ %>
+            <div class="ui checkbox" style="margin : 10px;">
+              <input type="checkbox">
+              <label><%=authorities[i].dataValues.name%></label>
+            </div>
+            <% } %>
+          </div>
+        </form>
+        <button class="fluid ui primary button" style="margin-top : 30px;" id="saveButton">Save</button>
+      </div>
+  </main>
+  <footer>
+    <% include partials/footer %>
+  </footer>
+</body>
+
+</html>

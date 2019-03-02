@@ -1,0 +1,61 @@
+<div class="ui container">
+  <div class="ui secondary menu" id="header">
+    <a class="item" href="/">OpenYearRound</a>
+    <div class="right item">
+      <a class="item" href="/introduce">동아리 소개</a>
+      <a class="item" href="/activity">주요활동</a>
+      <div class="item ui dropdown" id="dropdown_board">
+        <div class="text">게시판</div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <a class="item">공지사항 </a>
+          <div class="item needLogin">회비내역</div>
+          <div class="item needLogin">스터디 자료</div>
+          <div class="item needLogin">과제</div>
+        </div>
+      </div>
+      <% if (loginText == '로그인') {%>
+        <a class="item" id="header_menu_login"> <%= loginText %> </a>
+      <% } else{ %>
+        <div class="item ui dropdown" id="dropdown_my">
+          <div class="text"><%= loginText %></div>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <a class="item">마이페이지</a>
+            <a class="item">로그아웃</a>            
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<div class="ui tiny modal">
+  <i class="close icon"></i>
+  <div class="header">
+    로그인
+  </div>
+  <div class="content">
+    <div class="description">
+      <form class="ui form">
+        <div class="field">
+          <label>이름</label>
+          <input type="text" name="name" placeholder="이름" id="login_name">
+        </div>
+        <div class="field">
+          <label>패스워드</label>
+          <input type="password" name="password" placeholder="패스워드" id="login_password">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui black deny button">
+      취소
+    </div>
+    <div class="ui positive right labeled icon button" id="buttonLogin">
+      로그인
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>

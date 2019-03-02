@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include partials/head %>
+  <script src="/javascripts/board.js"></script>
+</head>
+
+<body>
+  <header>
+    <% include partials/header %>
+      <% include partials/breadcrumb %>
+  </header>
+  <main id="main">
+    <img class="introImageBoard" src="/images/background5.jpg" />
+    <div class="ui container">
+      <div class="ui grid">
+        <div class="four wide column contents90">
+          <h2 class="ui header"><%=breadcrumb %></h2>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="ui relaxed divided list centerText" id="board">
+        <div class="item">
+          <div class="content">
+            <div class="ui grid">
+              <div class="two wide column">
+                <p>글번호</p>
+              </div>
+              <div class="ten wide column">
+                <p>제목</p>
+              </div>
+              <div class="two wide column">
+                <p>날짜</p>
+              </div>
+              <div class="two wide column">
+                <p>작성자</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="item">
+          <div class="content">
+            <div class="ui grid">
+              <div class="two wide column">
+                <p>1</p>
+              </div>
+              <div class="ten wide column">
+                <p>아동 노동 착취 관련 웹 게임
+                  <b>Dawson's Daily Life</b>, 2017 교내 학술제 입상</p>
+              </div>
+              <div class="two wide column">
+                <p>18-05-14</p>
+              </div>
+              <div class="two wide column">
+                <p>진여준</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+            <div class="content">
+              <div class="ui grid">
+                <div class="two wide column">
+                  <p>2</p>
+                </div>
+                <div class="ten wide column">
+                  <p>OpenYearRound</p>
+                </div>
+                <div class="two wide column">
+                  <p>18-05-14</p>
+                </div>
+                <div class="two wide column">
+                  <p>진여준</p>
+                </div>
+              </div>
+            </div>
+          </div> -->
+      </div>
+      <div class="ui grid">
+        <div class="row">
+          <div class="column">
+            <button class="ui right floated primary basic button" id="writeButton">글 작성</button>              
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <% include partials/footer %>
+  </footer>
+</body>
+
+</html>

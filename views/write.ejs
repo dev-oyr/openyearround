@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include partials/head %>
+  <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+  <script src="/javascripts/image-resize.min.js"></script>
+  <script src="/javascripts/write.js"></script>
+  <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <% include partials/header %>
+      <% include partials/breadcrumb %>
+  </header>
+  <main id="main">
+    <img class="introImageBoard" src="/images/background5.jpg" />
+    <div class="ui container">
+      <div id="title" style="margin-bottom : 20px;"></div>
+      <div id="editor" style="height: 300px;"></div>
+      <div class="ui clearing segment">
+        <form action="http://openyearround.co.kr/upload" method="post" enctype="multipart/form-data" id="submitWithButton">
+          <label for="file" class="ui icon button">
+            <i class="file icon"></i> Add File</label>
+          <input type="file" id="file" name="userfile" style="display:none">
+        </form>
+      </div>
+      <button class="ui right floated primary basic button" id="saveButton">작성 완료</button>
+    </div>
+  </main>
+  <footer>
+    <% include partials/footer %>
+  </footer>
+</body>
+
+</html>
